@@ -1,0 +1,28 @@
+@import "../styles/variables";
+
+.skills {
+  .content {
+    margin-bottom: 60px;
+    .box {
+      display: flex;
+      align-items: center;
+
+      .left {
+        padding: 20px 50px;
+
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
+      .right {
+        margin-bottom: 15px;
+        .type {
+        }
+        p {
+          margin: 1em 0;
+        }
+      }
+    }
+  }
+}

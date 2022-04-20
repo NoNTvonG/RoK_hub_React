@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&family=Lato:wght@300;400;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap");
+@import "variables";
+@import "mixins";
+
+.App {
+  color: $cMidnight;
+  position: relative;
+  min-height: 100vh;
+  font-family: "Open Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // забрати виділення синім фотом для телефонів
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  .content {
+    padding-bottom: $footer-height;
+  }
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+
+.commandersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 165px);
+  grid-column-gap: 30px;
+  grid-row-gap: 60px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* commander id - page */
+.commander {
+  .commanderPortfolio {
+    display: flex;
+    justify-content: space-evenly;
+    height: calc(100vh - 100px);
+
+    .commanderImage {
+      margin: auto 0;
+
+      img {
+        height: 600px;
+      }
+    }
+
+    .commanderTitle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 4rem;
+        // font-size: 74px;
+        margin: 0 0 20px 0;
+        max-width: 310px;
+      }
+
+      .commanderNacion {
+        display: flex;
+        align-items: center;
+        margin: 0 0 20px 7px;
+
+        span {
+          font-size: 1.3rem;
+        }
+
+        .logoNacion {
+          display: flex;
+          align-items: center;
+
+          img {
+            margin-right: 10px;
+            height: 20px;
+            width: 20px;
+          }
+        }
+        .slogan {
+          &::before {
+            content: "|";
+          }
+        }
+      }
+    }
+
+    @media (max-width: 899px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: normal;
+      height: auto;
+
+      .commanderImage {
+        height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .commanderHistory {
+    p {
+      text-align: justify;
+    }
+  }
+}
+/* calculators - page */
+.calculators {
+  .calculatorsList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+/* calculator resources - page */
+.resources {
+  .resources-box-01 {
+    margin-bottom: 60px;
+
+    .box {
+      display: grid;
+      padding: 20px 0 30px;
+      grid-template-columns: repeat(auto-fit, 330px);
+      grid-gap: 20px;
+      justify-content: center;
+
+      & > div {
+        padding: 0 10px;
+      }
+    }
+  }
+  .resources-box-02 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 335px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      padding: 20px;
+    }
+  }
+  .resources-box-03 {
+    margin-bottom: 60px;
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 334px);
+      grid-gap: 20px;
+      justify-content: center;
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        padding: 20px;
+      }
+    }
+  }
+  .resources-box-04 {
+    margin-bottom: 60px;
+
+    .box {
+      display: grid;
+      padding: 20px 0 30px;
+      grid-template-columns: repeat(auto-fit, 259px);
+      grid-gap: 20px;
+      justify-content: center;
+
+      & > div {
+        padding: 0 10px;
+      }
+    }
+  }
+  .resources-box-05 {
+    margin-bottom: 60px;
+
+    .box {
+      display: grid;
+      padding: 20px 0 30px;
+      grid-template-columns: repeat(auto-fit, 330px);
+      grid-gap: 20px;
+      justify-content: center;
+
+      & > div {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+.dividerLine {
+  @include dividerHorizontalLine;
+}
+/* * * * * * * * * * */
+/* Static class */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $cDracula;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}

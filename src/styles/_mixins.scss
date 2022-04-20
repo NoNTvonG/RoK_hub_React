@@ -1,0 +1,32 @@
+@mixin cardUrl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@mixin dividerHorizontalLine {
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  margin: 1.5rem 0;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $cSilver;
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    z-index: 0;
+  }
+
+  span {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+    padding: 0px 25px;
+  }
+}

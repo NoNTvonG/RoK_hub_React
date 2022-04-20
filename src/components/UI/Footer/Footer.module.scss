@@ -1,0 +1,13 @@
+@import "../../../styles/variables";
+
+.footer {
+  color: $cSilver;
+  height: $footer-height;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 5px 3px rgba($cMidnight, 0.15);
+}

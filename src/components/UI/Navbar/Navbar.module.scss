@@ -1,0 +1,187 @@
+@import "../../../styles/variables";
+
+#header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 30px;
+  background-color: $cWhite;
+  box-shadow: 0px 0px 5px 3px rgba($cMidnight, 0.15);
+  z-index: 9999;
+  overflow: hidden;
+
+  .navBarLogo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height;
+    background-color: $cWhite;
+    width: 100%;
+    z-index: 100;
+
+    img {
+      height: $header-logo-height;
+    }
+  }
+
+  .navBarMenu {
+    .showDropMenu {
+      max-height: 300px;
+      opacity: 1;
+    }
+    .hideDropMenu {
+      visibility: hidden;
+      max-height: 0;
+      opacity: 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      transition: 0.3s all;
+      ul {
+        width: 100%;
+        margin: 15px 0;
+        li {
+          .navlink {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $cMidnight;
+
+            .navText {
+              position: relative;
+              display: flex;
+              justify-content: center;
+              padding: 0 25px;
+              line-height: calc(70px - 30px);
+              font-size: 14px;
+              width: 100%;
+            }
+
+            &.active {
+              background-color: $cClouds;
+              transition: 0.2s;
+
+              .navText {
+                &::before {
+                  content: none;
+                }
+
+                &::after {
+                  content: none;
+                }
+              }
+            }
+            &:focus {
+              color: $cMidnight;
+            }
+          }
+          &:nth-child(odd) {
+            .navText {
+              &::before {
+                content: "";
+                position: absolute;
+
+                left: 0;
+                top: -1px;
+                height: 1px;
+                width: 100%;
+                background-color: $cClouds;
+              }
+
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                height: 1px;
+                width: 100%;
+                background-color: $cClouds;
+              }
+            }
+          }
+
+          &:last-child {
+            .navText {
+              &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -1px;
+                height: 1px;
+                width: 100%;
+                background-color: $cClouds;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* ~~~~~~~~~~~~~~~~~~~~ Respo ~~~~~~~~~~~~~~~~~~~~*/
+@media (min-width: 900px) {
+  #header {
+    justify-content: space-between;
+    flex-direction: row;
+
+    .navBarLogo {
+      width: auto;
+
+      .navToggle {
+        display: none;
+      }
+    }
+
+    .navBarMenu {
+      .hideDropMenu {
+        visibility: visible;
+        max-height: none;
+        opacity: 1;
+      }
+
+      ul {
+        display: flex;
+        margin: 0 !important;
+        li {
+          .navlink {
+            height: $header-height;
+            .navText {
+            }
+          }
+          &:nth-child(odd) {
+            .navText {
+              &::before {
+                left: -1px !important;
+                top: 0 !important;
+                height: 100% !important;
+                width: 1px !important;
+              }
+
+              &::after {
+                left: auto !important;
+                bottom: auto !important;
+                right: -1px !important;
+                height: 100% !important;
+                width: 1px !important;
+              }
+            }
+          }
+
+          &:last-child {
+            .navText {
+              &::after {
+                left: auto !important;
+                bottom: auto !important;
+                right: -1px !important;
+                height: 100% !important;
+                width: 1px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

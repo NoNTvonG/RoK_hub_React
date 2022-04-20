@@ -1,0 +1,48 @@
+@import '../../../styles/variables';
+
+.input {
+	display: flex;
+	justify-content: center;
+
+	img {
+		height: 32px;
+		margin-right: 10px;
+	}
+
+	.text {
+		display: flex;
+		align-items: center;
+		padding: 0 5px;
+		border: 1px solid #bdc3c7;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		min-width: max-content;
+	}
+
+	input {
+		border: none;
+		border-bottom: 1px solid $cSilver;
+		font-size: 1.2rem;
+		color: $cDracula;
+		width: 100%;
+		padding: 0 5px;
+		background: transparent;
+
+		&:focus {
+			outline: none;
+		}
+
+		&[type='number'] {
+			-moz-appearance: textfield;
+
+			&::-webkit-outer-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+			&::-webkit-inner-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+		}
+	}
+}
