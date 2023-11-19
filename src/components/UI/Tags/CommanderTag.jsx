@@ -3,9 +3,8 @@ import CS from "./CommanderTag.module.scss"
 
 const CommanderTag = ({ specialization }) => {
   const iconUrl = (param) => {
-    return `/assets/iconsType/Commander_icon_type_${param}.webp`
+    return `${process.env.PUBLIC_URL}/assets/iconsType/Commander_icon_type_${param}.webp`
   }
-
   return (
     <div className={CS.specialization}>
       {specialization.map((e) => (
